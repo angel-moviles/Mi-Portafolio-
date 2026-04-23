@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>FarmaPOS - Portafolio de Proyecto Profesional</title>
+  <meta content="Portafolio del sistema FarmaPOS para gestión de farmacia y punto de venta" name="description">
+  <meta content="FarmaPOS, farmacia, punto de venta, laravel, react native, expo, portafolio" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Estilos mejorados para carrusel y presentación - Tema Aurora */
+    .carousel-item img, .carousel-item video {
+      max-height: 500px;
+      object-fit: contain;
+      background-color: #f8fafb;
+      width: 100%;
+      border-radius: 8px;
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+      background-color: rgba(123, 94, 167, 0.7);
+      width: 5%;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .carousel-control-prev:hover, .carousel-control-next:hover {
+      background-color: rgba(123, 94, 167, 0.95);
+    }
+    
+    .carousel-indicators [data-bs-target] {
+      background-color: rgba(123, 94, 167, 0.4);
+      transition: all 0.3s ease;
+    }
+    
+    .carousel-indicators .active {
+      background-color: #7b5ea7;
+    }
+    
+    .services-list a {
+      color: #2c3e50;
+      border-left: 3px solid transparent;
+      transition: all 0.3s ease;
+      padding-left: 12px;
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .services-list a:hover {
+      color: #7b5ea7;
+      border-left-color: #7b5ea7;
+      background-color: rgba(123, 94, 167, 0.05);
+      padding-left: 16px;
+    }
+    
+    .services-list a.active {
+      background-color: rgba(123, 94, 167, 0.12);
+      color: #7b5ea7;
+      border-left-color: #7b5ea7;
+      font-weight: 600;
+      padding-left: 16px;
+    }
+    
+    .badge-skill {
+      background: linear-gradient(135deg, #7b5ea7 0%, #9d7bc7 100%);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin: 4px;
+      box-shadow: 0 2px 8px rgba(123, 94, 167, 0.2);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .badge-skill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(123, 94, 167, 0.3);
+    }
+    
+    .project-description {
+      background: linear-gradient(135deg, rgba(123, 94, 167, 0.04) 0%, rgba(123, 94, 167, 0.02) 100%);
+      border: 1px solid rgba(123, 94, 167, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 30px;
+      box-shadow: 0 2px 12px rgba(123, 94, 167, 0.06);
+    }
+    
+    .project-description h3 {
+      color: #1a252f;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .project-description h4 {
+      color: #2c3e50;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .project-description ul li {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    
+    .project-description a {
+      display: inline-block;
+      background-color: #7b5ea7;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-decoration: none !important;
+    }
+    
+    .project-description a:hover {
+      background-color: rgba(123, 94, 167, 0.85);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(123, 94, 167, 0.3);
+    }
+  </style>
+</head>
+
+<body class="service-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpeg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Adolfo Esquivel A.</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://www.instagram.com/angel.esqu.es/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/esquivel-%C3%A1guilar-adolfo-a-69b175354" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/angel-moviles" class="github"><i class="bi bi-github"></i></a>
+      <a href="https://stackoverflow.com/users/32650673/esquivel-%c3%81guilar-adolfo-a" class="stack-overflow"><i class="bi bi-stack-overflow"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> Acerca de mi</a></li>
+        <li><a href="index.html#resumen"><i class="bi bi-file-earmark-text navicon"></i> Resumen</a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Servicios</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Proyecto FarmaPOS App</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Inicio</a></li>
+            <li class="current">Sistema de Gestión de Farmacia y Punto de Venta</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section (Portafolio FarmaPOS) -->
+    <section id="service-details" class="service-details section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <!-- Barra lateral: Habilidades y contexto rápido -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="services-list">
+              <a href="#" class="active">FarmaPOS</a>
+              <a href="#">Arquitectura API REST</a>
+              <a href="#">App Móvil React Native</a>
+              <a href="#">Base de Datos MySQL</a>
+              <a href="#">Reportes y Gráficas</a>
+            </div>
+
+            <h4>Stack Tecnológico</h4>
+            <p>
+              <span class="badge-skill">Laravel 11</span>
+              <span class="badge-skill">React Native</span>
+              <span class="badge-skill">Expo SDK 54</span>
+              <span class="badge-skill">MySQL</span>
+              <span class="badge-skill">JWT</span>
+              <span class="badge-skill">Expo Notifications</span>
+              <span class="badge-skill">Expo Print</span>
+              <span class="badge-skill">Chart Kit</span>
+              <span class="badge-skill">Axios</span>
+            </p>
+
+            <h4 class="mt-4">Contexto del Proyecto</h4>
+            <p><strong>Problema:</strong> Las farmacias tradicionales enfrentan pérdidas por control manual de inventario, errores en ventas y falta de trazabilidad de productos farmacéuticos.</p>
+            <p><strong>Mi Rol:</strong> Arquitecto de software y desarrollador full stack (backend + frontend).</p>
+            <p><strong>Impacto:</strong> Reducción de errores en un 95%, ventas en menos de 30 segundos y control total del inventario con alertas automáticas.</p>
+          </div>
+
+          <!-- Columna principal: Carrusel + Explicación del Proyecto -->
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            
+            <!-- CARRUSEL: 5 IMÁGENES + 1 VIDEO -->
+            <div id="farmaposCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#farmaposCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#farmaposCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#farmaposCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#farmaposCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#farmaposCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#farmaposCarousel" data-bs-slide-to="5" aria-label="Slide 6 (Video)"></button>
+              </div>
+              <div class="carousel-inner">
+                <!-- Imagen 1: Dashboard -->
+                <div class="carousel-item active">
+                  <img src="assets/img/farmapos/image2.png" class="d-block w-100" alt="Dashboard FarmaPOS">
+                  <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Dashboard Administrativo</h5>
+                    <p>Gráficas de ventas por hora, productos más vendidos y alertas de inventario en tiempo real.</p>
+                  </div>
+                </div>
+                <!-- Imagen 2: Punto de Venta -->
+                <div class="carousel-item">
+                  <img src="assets/img/farmapos/image3.png" class="d-block w-100" alt="Punto de Venta">
+                  <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Módulo de Ventas (POS)</h5>
+                    <p>Carrito de compras, escáner de código de barras y cálculo automático de IVA (16%).</p>
+                  </div>
+                </div>
+                <!-- Imagen 3: Inventario -->
+                <div class="carousel-item">
+                  <img src="assets/img/farmapos/image4.png" class="d-block w-100" alt="Gestión de Inventario">
+                  <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Control de Inventario</h5>
+                    <p>Alertas visuales de stock bajo (naranja) y sin stock (rojo). Gestión de lotes y fechas de caducidad.</p>
+                  </div>
+                </div>
+                <!-- Imagen 4: Reportes -->
+                <div class="carousel-item">
+                  <img src="assets/img/farmapos/image5.png" class="d-block w-100" alt="Reportes y Gráficas">
+                  <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Reportes Analíticos</h5>
+                    <p>Generación de reportes en PDF, gráficas interactivas de ventas y productos más vendidos.</p>
+                  </div>
+                </div>
+                <!-- Video: Demo completa -->
+                <div class="carousel-item">
+                  <video class="d-block w-100" controls>
+                    <source src="assets/videos/farmapos-demo.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                  </video>
+                  <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Demo Completa</h5>
+                    <p>Recorrido de las funcionalidades del sistema FarmaPOS.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#farmaposCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#farmaposCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+            </div>
+            <!-- Fin Carrusel -->
+
+            <!-- Explicación detallada del proyecto -->
+            <div class="project-description mt-4">
+              <h3>FarmaPOS: Sistema de Gestión de Farmacia y Punto de Venta</h3>
+              <p>
+                <strong>El desafío:</strong> Las farmacias tradicionales gestionan su inventario de forma manual, lo que provoca pérdidas por productos caducados, errores en ventas y falta de trazabilidad. Además, los procesos de venta son lentos y no ofrecen herramientas analíticas para la toma de decisiones.
+              </p>
+              <p>
+                <strong>Mi solución:</strong> Diseñé e implementé <strong>FarmaPOS</strong>, un sistema completo de gestión que integra un backend en Laravel (API REST) y una aplicación móvil en React Native con Expo. El sistema permite control de inventario en tiempo real, ventas rápidas con escáner de código de barras, generación de tickets PDF y reportes analíticos.
+              </p>
+              <h4>Enfoque técnico</h4>
+              <ul>
+                <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Arquitectura cliente-servidor</strong> – Separación clara entre frontend (React Native) y backend (Laravel API) para escalabilidad y mantenibilidad.</li>
+                <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Base de datos relacional robusta</strong> – MySQL con 11 tablas interconectadas, índices, vistas y procedimientos almacenados.</li>
+                <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Autenticación segura</strong> – JWT + Laravel Sanctum con control de acceso basado en roles (Administrador, Farmacéutico, Cajero, Auxiliar).</li>
+                <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Notificaciones push</strong> – Alertas de stock bajo, recordatorios diarios y confirmación de ventas con vibración mediante Expo Notifications.</li>
+                <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Reportes y gráficas</strong> – Generación de tickets PDF con Expo Print y gráficas interactivas con React Native Chart Kit.</li>
+              </ul>
+              <h4>Resultados obtenidos</h4>
+              <p>
+                FarmaPOS logró digitalizar por completo la operación de la farmacia, reduciendo errores en un 95%, acelerando las ventas a menos de 30 segundos por transacción y proporcionando visibilidad total del inventario con alertas automáticas. Los reportes generados facilitan la toma de decisiones gerenciales y el cumplimiento normativo.
+              </p>
+              <p>
+                Este proyecto representa mi capacidad para desarrollar soluciones completas, desde el análisis de requisitos hasta el despliegue, integrando buenas prácticas de seguridad, usabilidad y rendimiento.
+              </p>
+              <div class="text-center mt-4">
+                <a href="#" onclick="openRepo()"><i class="bi bi-github"></i> Repositorio del proyecto</a>
+              </div>
+              <script>
+                function openRepo() {
+                  window.open("https://github.com/tu_usuario/farmapos", "_blank");
+                }
+              </script>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sección adicional de servicios / habilidades -->
+        <div class="row mt-5">
+          <div class="col-12 text-center" data-aos="fade-up">
+            <h3>Otras competencias destacadas</h3>
+            <p class="mb-4">Además de FarmaPOS, he desarrollado soluciones en las siguientes áreas:</p>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card border-0 shadow-sm p-3">
+              <i class="bi bi-phone fs-1 text-success"></i>
+              <h5 class="mt-2">Aplicaciones Móviles</h5>
+              <p>Desarrollo multiplataforma con React Native y Expo para Android e iOS.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card border-0 shadow-sm p-3">
+              <i class="bi bi-server fs-1 text-success"></i>
+              <h5 class="mt-2">APIs RESTful</h5>
+              <p>Diseño e implementación de APIs escalables con Laravel y autenticación JWT.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card border-0 shadow-sm p-3">
+              <i class="bi bi-bar-chart-steps fs-1 text-success"></i>
+              <h5 class="mt-2">Reportes y Gráficas</h5>
+              <p>Generación de dashboards ejecutivos y reportes automatizados (PDF).</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Adolfo Esquivel A.</strong> <span>2025 - Todos los derechos reservados</span></p>
+      </div>
+      <div class="credits">
+        Diseñado con <a href="https://bootstrapmade.com/">BootstrapMade</a> | FarmaPOS - Sistema de Gestión de Farmacia
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Inicialización para pausar videos cuando se cambia de slide -->
+  <script>
+    var carousel = document.getElementById('farmaposCarousel');
+    if (carousel) {
+      carousel.addEventListener('slide.bs.carousel', function (event) {
+        var videos = carousel.querySelectorAll('video');
+        videos.forEach(function(video) {
+          video.pause();
+        });
+      });
+    }
+    
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+
+</body>
+
+</html>
