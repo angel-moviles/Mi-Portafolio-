@@ -1243,6 +1243,32 @@ section,
   box-shadow: 0 4px 12px rgba(123, 94, 167, 0.3);
 }
 
+/* Contact Button Styles */
+.contact-btn {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: none;
+  padding: 12px 35px;
+  transition: all 0.4s ease;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.contact-btn:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(123, 94, 167, 0.3);
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(123, 94, 167, 0.3);
+}
+
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
@@ -1374,4 +1400,85 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+/* Estilos para la sección de habilidades técnicas */
+.skills-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    padding: 12px 15px;
+    background: #fff;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid #eef2f6;
+}
+
+.skill-item:hover {
+    transform: translateX(8px);
+    border-color: #9d14dd;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.skill-icon {
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    padding: 6px;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+    transform: scale(1.05);
+}
+
+.skill-name {
+    font-size: 1rem;
+    color: #2c3e50;
+    min-width: 160px;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.badge.bg-primary {
+    background: linear-gradient(135deg, #9d14dd 0%, #0e6b9b 100%) !important;
+    color: white;
+}
+
+.badge.bg-info {
+    background: linear-gradient(135deg, #9d17b8 0%, #0f6b7a 100%) !important;
+    color: white;
+}
+
+.badge.bg-secondary {
+    background: linear-gradient(135deg, #ca4ec4 0%, #495057 100%) !important;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .skill-item .d-flex {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .skill-level {
+        margin-left: 0 !important;
+        margin-top: 5px;
+    }
+    
+    .skill-name {
+        min-width: auto;
+        flex: 1;
+    }
+    
+    .skill-item {
+        padding: 12px;
+    }
 }

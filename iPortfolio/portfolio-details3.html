@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>FarmaPOS - Portafolio Profesional | Laravel + React Native</title>
+  <meta content="Portafolio completo del sistema FarmaPOS para gestión de farmacia y punto de venta con arquitectura backend Laravel y frontend React/React Native" name="description">
+  <meta content="FarmaPOS, farmacia, punto de venta, laravel, react native, expo, portafolio, full stack" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/image.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Estilos mejorados - Tema profesional farmacia */
+    .video-hero-container {
+      position: relative;
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 35px -15px rgba(0,0,0,0.3);
+      background: #000;
+      transition: all 0.3s ease;
+    }
+    
+    .video-hero-container video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #0a0a0a;
+    }
+    
+    .video-caption {
+      background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 0 0 20px 20px;
+      text-align: center;
+      font-weight: 500;
+      margin-top: -5px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .tech-badge {
+      background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-right: 0.6rem;
+      margin-bottom: 0.6rem;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+      letter-spacing: 0.3px;
+    }
+    
+    .tech-badge i {
+      margin-right: 5px;
+      font-size: 0.85rem;
+    }
+    
+    .tech-badge:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #149ddd 0%, #0f6f8a 100%);
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    
+    .feature-item {
+      background: rgba(20, 157, 221, 0.05);
+      border-left: 3px solid #149ddd;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    .feature-item i {
+      color: #149ddd;
+      margin-right: 8px;
+      font-size: 1.1rem;
+    }
+    
+    .architecture-badge {
+      background: #f0f4f9;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      transition: all 0.3s;
+      height: 100%;
+      border: 1px solid #e0e7ef;
+    }
+    
+    .architecture-badge:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+      border-color: #149ddd;
+    }
+    
+    .services-list a {
+      color: #2c3e50;
+      border-left: 3px solid transparent;
+      transition: all 0.3s ease;
+      padding-left: 12px;
+      display: block;
+      margin-bottom: 8px;
+      text-decoration: none;
+    }
+    
+    .services-list a:hover, .services-list a.active {
+      color: #149ddd;
+      border-left-color: #149ddd;
+      background-color: rgba(20, 157, 221, 0.08);
+      padding-left: 16px;
+    }
+    
+    .badge-skill {
+      background: linear-gradient(135deg, #149ddd 0%, #0f6f8a 100%);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+      margin: 4px;
+      box-shadow: 0 2px 6px rgba(20,157,221,0.25);
+    }
+    
+    .project-description-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.8rem;
+      margin-top: 2rem;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+      border: 1px solid rgba(20,157,221,0.15);
+    }
+    
+    .btn-farmapos {
+      background: linear-gradient(135deg, #149ddd 0%, #0c6d8a 100%);
+      color: white;
+      border: none;
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(20,157,221,0.3);
+    }
+    
+    .btn-farmapos:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(20,157,221,0.4);
+      background: linear-gradient(135deg, #1aa3e5 0%, #0e7a9c 100%);
+      color: white;
+    }
+    
+    @media (max-width: 768px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .project-description-card {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="service-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpeg" alt="Adolfo Esquivel" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Adolfo Esquivel A.</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://www.instagram.com/angel.esqu.es/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/esquivel-%C3%A1guilar-adolfo-a-69b175354" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/angel-moviles" class="github"><i class="bi bi-github"></i></a>
+      <a href="https://stackoverflow.com/users/32650673/esquivel-%c3%81guilar-adolfo-a" class="stack-overflow"><i class="bi bi-stack-overflow"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> Acerca de mi</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resumen</a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Servicios</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">FarmaPOS - Sistema gestor de medicamentos para farmacia</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Inicio</a></li>
+            <li class="current">Portafolio: FarmaPOS (Laravel + React)</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Service Details Section (Portafolio FarmaPOS) -->
+    <section id="service-details" class="service-details section">
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <!-- Barra lateral: Contexto técnico y stack -->
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="services-list mb-4">
+              <a href="#" class="active">FarmaPOS Ecosystem</a>
+              <a href="#">API REST (Laravel)</a>
+              <a href="#">React Native App</a>
+              <a href="#">React Dashboard Web</a>
+              <a href="#">Reportes y Analitica</a>
+            </div>
+
+            <h4 class="mt-4">Stack Tecnológico</h4>
+            <div class="mb-4">
+              <span class="badge-skill"><i class="bi bi-code-slash"></i> Laravel 11</span>
+              <span class="badge-skill"><i class="bi bi-braces"></i> React 18</span>
+              <span class="badge-skill"><i class="bi bi-phone"></i> React Native</span>
+              <span class="badge-skill"><i class="bi bi-database"></i> MySQL / PostgreSQL</span>
+              <span class="badge-skill"><i class="bi bi-shield-lock"></i> Sanctum JWT</span>
+              <span class="badge-skill"><i class="bi bi-filetype-pdf"></i> DomPDF / Expo Print</span>
+              <span class="badge-skill"><i class="bi bi-graph-up"></i> Chart.js / Chart Kit</span>
+              <span class="badge-skill"><i class="bi bi-bell"></i> Expo Notifications</span>
+            </div>
+
+            <h4 class="mt-4">Contexto del Proyecto</h4>
+            <div class="p-3 bg-light rounded-3">
+              <p><strong>Problema real:</strong> Farmacias tradicionales con control manual de inventario, pérdidas por vencimiento de productos, ventas lentas y nula trazabilidad.</p>
+              <p><strong>Mi Rol:</strong> Arquitecto de software & desarrollador Full Stack (backend Laravel + frontend React/React Native).</p>
+              <p><strong>Impacto medible:</strong> Reducción del 95% de errores de inventario, ventas procesadas en <30 segundos, alertas automáticas de stock crítico.</p>
+              <p><strong>Arquitectura:</strong> API REST consumida por dos frontends (web y móvil), base de datos relacional optimizada, autenticación por roles (Admin, Farmacéutico, Cajero, Auxiliar).</p>
+            </div>
+            
+            <div class="mt-4 text-center">
+            </div>
+          </div>
+
+          <!-- Columna principal: VIDEO DE DEMOSTRACIÓN + detalles técnicos completos -->
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            
+            <!-- VIDEO PRINCIPAL - en lugar de carrusel -->
+            <div class="video-hero-container">
+              <video controls poster="assets/videos/FarmaPOS - Sistema de Gestión de Farmacia - Personal_ Microsoft​ Edge 2026-03-21 18-21-26.mp4" preload="metadata">
+                <source src="assets/videos/Video Project.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video. Descarga la demo desde <a href="https://github.com/angel-moviles/farmapos-demo">GitHub</a>.
+              </video>
+            </div>
+            <div class="video-caption">
+              <i class="bi bi-camera-reels me-2"></i> Video demostrativo completo: Flujo de ventas, gestión de inventario, reportes y panel administrativo (Frontend React + Backend Laravel)
+            </div>
+
+            <!-- Explicación detallada y características clave -->
+            <div class="project-description-card">
+              <hr class="my-4">
+              
+              <h4><i class="bi bi-diagram-3"></i> Arquitectura y diseño</h4>
+              <p>El sistema sigue una arquitectura de microservicios orientada a API REST, garantizando escalabilidad y mantenibilidad. El backend está construido con <strong>Laravel 11</strong>.La autenticación se maneja con <strong>Laravel Sanctum</strong> (tokens JWT) y control de acceso basado en roles. Por otro lado, los clientes incluyen:</p>
+              <ul>
+                <li><strong>Web Dashboard (React + Vite)</strong>: Panel administrativo con gráficos interactivos (Recharts), gestión completa de productos, ventas, proveedores y usuarios.</li>
+                <li><strong>App Móvil (React Native + Expo)</strong>: Punto de venta con escáner de código de barras, recepción de notificaciones push, generación de tickets PDF y modo offline con sincronización.</li>
+              </ul>
+              
+              <h4 class="mt-4"><i class="bi bi-grid-3x3-gap-fill"></i> Módulos funcionales clave</h4>
+              <div class="feature-grid">
+                <div class="feature-item"><i class="bi bi-box-seam"></i> Inventario con lotes y fechas de caducidad</div>
+                <div class="feature-item"><i class="bi bi-cart-check"></i> Punto de venta (POS) ultrarrápido</div>
+                <div class="feature-item"><i class="bi bi-upc-scan"></i> Búsqueda por código de barras</div>
+                <div class="feature-item"><i class="bi bi-people"></i> Gestión de empleados por roles</div>
+                <div class="feature-item"><i class="bi bi-file-earmark-spreadsheet"></i> Reportes en PDF y Excel</div>
+                <div class="feature-item"><i class="bi bi-bell-fill"></i> Alertas de stock mínimo</div>
+                <div class="feature-item"><i class="bi bi-graph-up"></i> Dashboard con KPIs en tiempo real</div>
+                <div class="feature-item"><i class="bi bi-truck"></i> Catálogo de proveedores y laboratorios</div>
+              </div>
+              
+              <h4 class="mt-4"><i class="bi bi-layers"></i> Tecnologías específicas</h4>
+              <div>
+                <span class="tech-badge"><i class="bi bi-back"></i> Laravel 11 (PHP 8.2+)</span>
+                <span class="tech-badge"><i class="bi bi-filetype-js"></i> Axios / Context API</span>
+                <span class="tech-badge"><i class="bi bi-database-fill-gear"></i> Eloquent ORM + Migraciones</span>
+                <span class="tech-badge"><i class="bi bi-camera"></i> Escaneo de código de barras (Quagga)</span>
+                <span class="tech-badge"><i class="bi bi-printer"></i> Impresión de tickets con Expo Print</span>
+                <span class="tech-badge"><i class="bi bi-envelope-paper"></i> Envío de correos transaccionales</span>
+              </div>
+              
+              <h4 class="mt-4"><i class="bi bi-bar-chart-steps"></i> Resultados y logros</h4>
+              <p>FarmaPOS fue concebido como un proyecto universitario que evolucionó a un producto funcional demostrando mi capacidad y la de mi equipo para integrar soluciones completas. Entre los logros destacan:</p>
+              <ul>
+                <li>Reducción del tiempo de venta de 3 minutos a menos de 30 segundos.</li>
+                <li>Control total de inventario con alertas automáticas de caducidad y bajo stock.</li>
+                <li>Seguridad robusta con roles diferenciados y registro de auditoría por cada transacción.</li>
+                <li>Interfaz moderna y responsiva tanto en web como en dispositivos móviles.</li>
+                <li>Documentación completa de API (Postman) y despliegue mediante contenedores Docker.</li>
+              </ul>
+              
+              <div class="row mt-4 g-3">
+                <div class="col-md-4">
+                  <div class="architecture-badge">
+                    <i class="bi bi-database fs-2" style="color:#149ddd"></i>
+                    <p class="mt-2 mb-0 fw-bold">Base de Datos</p>
+                    <small class="text-muted">11 tablas relacionales, índices y vistas</small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="architecture-badge">
+                    <i class="bi bi-cloud-arrow-up fs-2" style="color:#149ddd"></i>
+                    <p class="mt-2 mb-0 fw-bold">REST API</p>
+                    <small class="text-muted">30+ endpoints documentados</small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="architecture-badge">
+                    <i class="bi bi-phone-landscape fs-2" style="color:#149ddd"></i>
+                    <p class="mt-2 mb-0 fw-bold">React Native</p>
+                    <small class="text-muted">Expo SDK 54, notificaciones push</small>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="text-center mt-5">
+                 <a href="https://github.com/angel-moviles/Farmacia_Frontend" class="btn-farmapos" target="_blank"><i class="bi bi-github"></i> Ver repositorio en GitHub</a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección adicional: Otras habilidades y servicios complementarios -->
+        <div class="row mt-5 pt-3">
+          <div class="col-12 text-center" data-aos="fade-up">
+            <h3>Competencias adicionales del ecosistema</h3>
+            <p class="mb-4">Experiencia en el desarrollo de soluciones integradas y buenas prácticas de ingeniería de software.</p>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card border-0 shadow-sm p-4 h-100 text-center">
+              <i class="bi bi-code-square fs-1" style="color:#149ddd"></i>
+              <h5 class="mt-3">Desarrollo Full Stack</h5>
+              <p>Experiencia completa en frontend y backend con tecnologías modernas como Laravel, React, React Native y bases de datos relacionales.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card border-0 shadow-sm p-4 h-100 text-center">
+              <i class="bi bi-shield-check fs-1" style="color:#149ddd"></i>
+              <h5 class="mt-3">Seguridad y Roles</h5>
+              <p>Implementación de JWT, middleware de autenticación y permisos granulares para cada tipo de usuario dentro del sistema.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card border-0 shadow-sm p-4 h-100 text-center">
+              <i class="bi bi-bar-chart-line fs-1" style="color:#149ddd"></i>
+              <h5 class="mt-3">Analítica y Reportes</h5>
+              <p>Generación de dashboards interactivos y reportes automatizados en múltiples formatos (PDF, Excel) para la toma de decisiones.</p>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Adolfo Esquivel A.</strong> <span>2025 - Todos los derechos reservados</span></p>
+      </div>
+      <div class="credits">
+        Diseñado con <a href="https://bootstrapmade.com/">BootstrapMade</a> | FarmaPOS - Solución integral para farmacias | Backend Laravel + Frontend React
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    AOS.init({ duration: 800, once: true });
+    
+    // Pequeña verificación si el video no existe local, mostrar mensaje elegante
+    const videoElement = document.querySelector('video');
+    if (videoElement) {
+      videoElement.addEventListener('error', function() {
+        const parent = this.closest('.video-hero-container');
+        if (parent) {
+          const warningDiv = document.createElement('div');
+          warningDiv.className = 'alert alert-warning text-center mt-2';
+          warningDiv.innerHTML = '<i class="bi bi-exclamation-triangle"></i> Video demostrativo no encontrado. Consulta la demo en <a href="https://github.com/angel-moviles/farmapos-demo" target="_blank" class="alert-link">GitHub</a> para ver el flujo completo.';
+          parent.parentNode.insertBefore(warningDiv, parent.nextSibling);
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
